@@ -26,9 +26,9 @@ class CreateEventsTable extends Migration
             $table->string('state', 191);
             $table->bigInteger('zip_code');
             $table->bigInteger('primary_contact_phone');
-            $table->bigInteger('primary_contact_email');
-            $table->bigInteger('secondary_contact_phone');
-            $table->bigInteger('secondary_contact_email');
+            $table->string('primary_contact_email', 191);
+            $table->bigInteger('secondary_contact_phone')->nullable()->default(null);
+            $table->string('secondary_contact_email', 191)->nullable()->default(null);
             $table->string('categories')->nullable();
             $table->string('genre', 100)->nullable();
             $table->string('tags')->nullable();
