@@ -19,8 +19,8 @@ class CreatePromosTable extends Migration
             $table->string('position_id');
             $table->string('title');
             $table->text('description');
-            $table->json('categories')->nullable();
-            $table->json('images')->nullable();
+            $table->string('categories')->nullable();
+            $table->string('images')->nullable();
             $table->timestamps();
         });
     }

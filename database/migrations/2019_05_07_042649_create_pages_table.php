@@ -19,9 +19,9 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->boolean('is_visible')->nullable()->default(false);
             $table->boolean('is_draft')->nullable()->default(false);
-            $table->json('roles_can_view')->nullable();
-            $table->json('roles_can_edit_admin')->nullable();
-            $table->json('roles_can_edit_basic')->nullable();
+            $table->string('roles_can_view')->nullable();
+            $table->string('roles_can_edit_admin')->nullable();
+            $table->string('roles_can_edit_basic')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
