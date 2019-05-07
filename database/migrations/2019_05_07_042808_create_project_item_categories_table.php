@@ -15,6 +15,7 @@ class CreateProjectItemCategoriesTable extends Migration
     {
         Schema::create('project_item_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title', 100)->nullable();
             $table->timestamps();
         });
     }

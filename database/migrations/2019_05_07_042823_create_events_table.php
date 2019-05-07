@@ -15,7 +15,32 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('project_id')->unsigned()->nullable();
+            $table->integer('sort_position')->unsigned()->nullable();
+            $table->string('title', 191)->nullable();
+            $table->text('description')->nullable()->default('text');
+            $table->float('price')->nullable();
+            $table->string('address1', 191);
+            $table->string('address2', 191)->nullable();
+            $table->string('city', 191);
+            $table->string('state', 191);
+            $table->bigInteger('zip_code');
+            $table->bigInteger('primary_contact_phone');
+            $table->bigInteger('primary_contact_email');
+            $table->bigInteger('secondary_contact_phone');
+            $table->bigInteger('secondary_contact_email');
+            $table->json('categories')->nullable();
+            $table->string('genre', 100)->nullable();
+            $table->json('tags')->nullable();
+            $table->json('images')->nullable();
+            $table->string('facebook')->nullable();
+            $table->json('other_online_links')->nullable();
+            $table->dateTime('event_datetime')->nullable();
+            $table->boolean('is_visible')->nullable()->default(false);
+            $table->boolean('is_draft')->nullable()->default(false);
+            $table->dateTime('publish_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -14,7 +14,7 @@ class AddRolesToUser extends Migration
     public function up()
     {
         Schema::table('user', function (Blueprint $table) {
-            //
+            $table->integer('role_id')->after('email')->unsigned();
         });
     }
 
@@ -26,7 +26,7 @@ class AddRolesToUser extends Migration
     public function down()
     {
         Schema::table('user', function (Blueprint $table) {
-            //
+            $table->dropColumn('role_id');
         });
     }
 }

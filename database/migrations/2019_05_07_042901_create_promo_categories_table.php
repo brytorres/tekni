@@ -15,6 +15,7 @@ class CreatePromoCategoriesTable extends Migration
     {
         Schema::create('promo_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title', 100)->nullable();
             $table->timestamps();
         });
     }

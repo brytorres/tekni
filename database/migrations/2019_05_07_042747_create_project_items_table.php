@@ -15,7 +15,30 @@ class CreateProjectItemsTable extends Migration
     {
         Schema::create('project_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('project_id')->unsigned();
+            $table->integer('sort_position')->unsigned()->nullable();
+            $table->string('title', 191)->nullable();
+            $table->text('description')->nullable();
+            $table->text('length')->nullable();
+            $table->json('categories')->nullable();
+            $table->string('genre', 100)->nullable();
+            $table->json('tags')->nullable();
+            $table->json('images')->nullable();
+            $table->string('file_url')->nullable();
+            $table->string('preview_url')->nullable();
+            $table->string('store_url')->nullable();
+            $table->string('soundcloud')->nullable();
+            $table->string('bandcamp')->nullable();
+            $table->string('reverbnation')->nullable();
+            $table->json('other_online_links')->nullable();
+            $table->dateTime('released_on')->nullable();
+            $table->string('publishing', 191)->nullable();
+            $table->string('copyright', 191)->nullable();
+            $table->boolean('is_visible')->nullable()->default(false);
+            $table->boolean('is_draft')->nullable()->default(false);
+            $table->dateTime('publish_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

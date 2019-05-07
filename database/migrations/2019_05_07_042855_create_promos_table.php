@@ -15,6 +15,12 @@ class CreatePromosTable extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('page_id')->unsigned();
+            $table->string('position_id');
+            $table->string('title');
+            $table->text('description');
+            $table->json('categories')->nullable();
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }

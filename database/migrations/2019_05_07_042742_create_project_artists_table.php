@@ -15,7 +15,10 @@ class CreateProjectArtistsTable extends Migration
     {
         Schema::create('project_artists', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('project_id')->unsigned();
+            $table->integer('artist_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
