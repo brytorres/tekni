@@ -14,7 +14,7 @@ class AddRolesToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id')->after('email')->unsigned();
+            $table->integer('role_id')->after('email')->unsigned()->default(3);
         });
     }
 
