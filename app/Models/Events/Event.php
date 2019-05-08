@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models\Events;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Page extends Model
+class Event extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'pages';
+    protected $table = 'events';
 }

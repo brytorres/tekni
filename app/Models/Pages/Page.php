@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models\Pages;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Project extends Model
+class Page extends Model
 {
     use SoftDeletes;
-    
-    protected $table = 'projects';
+
+    protected $table = 'pages';
 }
